@@ -3,9 +3,12 @@
 //! At Coaster device can be understood as a synonym to OpenCL's context.
 
 use libc;
-use frameworks::opencl::{API, Error, Device};
+use frameworks::opencl::{API, Device, Error};
+use frameworks::opencl::context::ContextInfo;
 use super::types as cl;
 use super::ffi::*;
+use std::ptr;
+use std::mem::size_of;
 
 impl API {
     /// Creates a OpenCL context.
@@ -47,6 +50,90 @@ impl API {
             errcode if errcode == cl::Status::OUT_OF_RESOURCES as i32 => Err(Error::OutOfResources("Failure to allocate resources on the device")),
             errcode if errcode == cl::Status::OUT_OF_HOST_MEMORY as i32 => Err(Error::OutOfHostMemory("Failure to allocate resources on the host")),
             _ => Err(Error::Other("Unable to create context"))
+        }
+    }
+
+    /// Gets info about one of the available properties of an OpenCL context.
+    pub fn get_context_info(
+        context: cl::context_id,
+        info: cl::ContextInfoQuery,
+    ) -> Result<ContextInfo, Error> {
+        Ok(try! {
+            unsafe {
+                let mut zero: usize = 0;
+                let info_size: *mut usize = &mut zero;
+                let info_ptr: *mut libc::c_void = ptr::null_mut();
+                API::ffi_get_context_info_size(context, info, info_size)
+                    .and_then(|_| {
+                        API::ffi_get_context_info(context,
+                                                  info,
+                                                  *info_size,
+                                                  info_ptr)
+                    }).and_then(|_| {
+                        match info {
+                            cl::ContextInfoQuery::REFERENCE_COUNT => {
+                                Ok(ContextInfo::ReferenceCount(info_ptr as cl::uint))
+                            },
+                            cl::ContextInfoQuery::DEVICES => {
+                                let len = *info_size / size_of::<cl::uint>();
+                                Ok(ContextInfo::Devices(
+                                    Vec::from_raw_parts(
+                                        info_ptr as *mut cl::uint,
+                                        len, len
+                                )))
+                            },
+                            cl::ContextInfoQuery::NUM_DEVICES => {
+                                Ok(ContextInfo::NumDevices(info_ptr as cl::uint))
+                            },
+                            cl::ContextInfoQuery::PROPERTIES => {
+                                Ok(ContextInfo::ContextProperties(info_ptr as cl::context_properties))
+                            }
+                        }
+                    })
+            }
+        })
+    }
+    
+    // This function calls clGetContextInfo with the return data pointer set to
+    // NULL to find out the needed memory allocation first.
+    unsafe fn ffi_get_context_info_size(
+        context: cl::context_id,
+        param_name: cl::ContextInfoQuery,
+        param_value_size_ret: *mut libc::size_t
+    ) -> Result<(), Error> {
+        match clGetContextInfo(context,
+                               param_name as cl::uint,
+                               0,
+                               ptr::null_mut(),
+                               param_value_size_ret) {
+            cl::Status::SUCCESS => Ok(()),
+            cl::Status::INVALID_CONTEXT => Err(Error::InvalidContext("Invalid context")),
+            cl::Status::INVALID_VALUE => Err(Error::InvalidValue("Invalid value")),
+            cl::Status::OUT_OF_RESOURCES => Err(Error::OutOfResources("Out of resources")),
+            cl::Status::OUT_OF_HOST_MEMORY => Err(Error::OutOfHostMemory("Out of host memory")),
+            _ => Err(Error::Other("Could not determine needed memory to allocate context info."))
+        }
+    }
+
+    // This function calls clGetContextInfo with the return data pointer set,
+    // and the return size pointer set to NULL (since we assume you know before
+    // you call this function how much memory you need).
+    unsafe fn ffi_get_context_info(
+        context: cl::context_id,
+        param_name: cl::ContextInfoQuery,
+        param_value_size: libc::size_t,
+        param_value: *mut libc::c_void) -> Result<(), Error> {
+        match clGetContextInfo(context,
+                               param_name as cl::uint,
+                               param_value_size,
+                               param_value,
+                               ptr::null_mut()) {
+            cl::Status::SUCCESS => Ok(()),
+            cl::Status::INVALID_CONTEXT => Err(Error::InvalidContext("Invalid context")),
+            cl::Status::INVALID_VALUE => Err(Error::InvalidValue("Invalid value")),
+            cl::Status::OUT_OF_RESOURCES => Err(Error::OutOfResources("Out of resources")),
+            cl::Status::OUT_OF_HOST_MEMORY => Err(Error::OutOfHostMemory("Out of host memory")),
+            _ => Err(Error::Other("Could not determine needed memory to allocate context info."))
         }
     }
 }
