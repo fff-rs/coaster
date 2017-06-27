@@ -49,7 +49,7 @@ impl PartialOrd for Version {
     }
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, PartialEq)]
 /// Defines a OpenCL Device.
 ///
 /// Can later be transformed into a [Coaster hardware][hardware].
