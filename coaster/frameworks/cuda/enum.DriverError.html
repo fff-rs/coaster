@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `DriverError` enum in crate `coaster`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, DriverError">
+
+    <title>coaster::frameworks::cuda::DriverError - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum DriverError</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../../index.html'>coaster</a>::<wbr><a href='../index.html'>frameworks</a>::<wbr><a href='index.html'>cuda</a></p><script>window.sidebarCurrent = {name: 'DriverError', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../index.html'>coaster</a>::<wbr><a href='../index.html'>frameworks</a>::<wbr><a href='index.html'>cuda</a>::<wbr><a class="enum" href=''>DriverError</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/coaster/frameworks/cuda/api/driver/error.rs.html#7-122' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum DriverError {
+    InvalidValue(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    OutOfMemory(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NotInitialized(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    Deinitialized(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    ProfilerDisabled(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    ProfilerNotInitialized(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    ProfilerAlreadyStarted(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    ProfilerAlreadyStopped(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NoDevice(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidDevice(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidImage(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidContext(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    ContextAlreadyCurrent(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    MapFailed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    UnmapFailed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    ArrayIsMapped(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    AlreadyMapped(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NoBinaryForGpu(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    AlreadyAquired(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NotMapped(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NotMappedAsArray(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NotMappedAsPointer(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    EccUncorrectable(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    UnsupportedLimit(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    ContextAlreadyInUse(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    PeerAccessUnsupported(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidPtx(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidGraphicsContent(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidSource(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    FileNotFound(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    SharedObjectSymbolNotFound(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    SharedObjectInitFailed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    OperatingSystem(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidHandle(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NotFound(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NotReady(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    IllegalAddress(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    LaunchOutOfResources(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    LaunchTimeout(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    LauncIncompatibleTexturing(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    PeerAccessAlreadyEnabled(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    PeerAccessNotEnabled(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    PrimaryContextActive(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    ContextIsDestroyed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    Assert(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    TooManyPeers(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    HostMemoryAlreadyRegistered(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    HostMemoryNotRegistered(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    HardwareStackError(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    IllegalInstruction(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    MisalignedAddress(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidAddressSpace(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidPc(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    LaunchFailed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NotPermitted(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    NotSupported(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    Unknown(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+}</pre><div class='docblock'><p>Defines OpenCL errors.</p>
+</div><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.InvalidValue' class='variant'><span id='InvalidValue.v' class='invisible'><code>InvalidValue(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided value.</p>
+</div><span id='variant.OutOfMemory' class='variant'><span id='OutOfMemory.v' class='invisible'><code>OutOfMemory(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with memory allocation.</p>
+</div><span id='variant.NotInitialized' class='variant'><span id='NotInitialized.v' class='invisible'><code>NotInitialized(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with Cuda initialization.</p>
+</div><span id='variant.Deinitialized' class='variant'><span id='Deinitialized.v' class='invisible'><code>Deinitialized(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with Cuda initialization.</p>
+</div><span id='variant.ProfilerDisabled' class='variant'><span id='ProfilerDisabled.v' class='invisible'><code>ProfilerDisabled(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with Profiler.</p>
+</div><span id='variant.ProfilerNotInitialized' class='variant'><span id='ProfilerNotInitialized.v' class='invisible'><code>ProfilerNotInitialized(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with Profiler.</p>
+</div><span id='variant.ProfilerAlreadyStarted' class='variant'><span id='ProfilerAlreadyStarted.v' class='invisible'><code>ProfilerAlreadyStarted(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with Profiler.</p>
+</div><span id='variant.ProfilerAlreadyStopped' class='variant'><span id='ProfilerAlreadyStopped.v' class='invisible'><code>ProfilerAlreadyStopped(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with Profiler.</p>
+</div><span id='variant.NoDevice' class='variant'><span id='NoDevice.v' class='invisible'><code>NoDevice(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with Cuda devices.</p>
+</div><span id='variant.InvalidDevice' class='variant'><span id='InvalidDevice.v' class='invisible'><code>InvalidDevice(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided Cuda device.</p>
+</div><span id='variant.InvalidImage' class='variant'><span id='InvalidImage.v' class='invisible'><code>InvalidImage(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided Cuda image.</p>
+</div><span id='variant.InvalidContext' class='variant'><span id='InvalidContext.v' class='invisible'><code>InvalidContext(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided Cuda context.</p>
+</div><span id='variant.ContextAlreadyCurrent' class='variant'><span id='ContextAlreadyCurrent.v' class='invisible'><code>ContextAlreadyCurrent(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided Cuda context.</p>
+</div><span id='variant.MapFailed' class='variant'><span id='MapFailed.v' class='invisible'><code>MapFailed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.UnmapFailed' class='variant'><span id='UnmapFailed.v' class='invisible'><code>UnmapFailed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.ArrayIsMapped' class='variant'><span id='ArrayIsMapped.v' class='invisible'><code>ArrayIsMapped(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.AlreadyMapped' class='variant'><span id='AlreadyMapped.v' class='invisible'><code>AlreadyMapped(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.NoBinaryForGpu' class='variant'><span id='NoBinaryForGpu.v' class='invisible'><code>NoBinaryForGpu(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with binary.</p>
+</div><span id='variant.AlreadyAquired' class='variant'><span id='AlreadyAquired.v' class='invisible'><code>AlreadyAquired(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.NotMapped' class='variant'><span id='NotMapped.v' class='invisible'><code>NotMapped(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.NotMappedAsArray' class='variant'><span id='NotMappedAsArray.v' class='invisible'><code>NotMappedAsArray(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.NotMappedAsPointer' class='variant'><span id='NotMappedAsPointer.v' class='invisible'><code>NotMappedAsPointer(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.EccUncorrectable' class='variant'><span id='EccUncorrectable.v' class='invisible'><code>EccUncorrectable(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.UnsupportedLimit' class='variant'><span id='UnsupportedLimit.v' class='invisible'><code>UnsupportedLimit(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.ContextAlreadyInUse' class='variant'><span id='ContextAlreadyInUse.v' class='invisible'><code>ContextAlreadyInUse(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with context.</p>
+</div><span id='variant.PeerAccessUnsupported' class='variant'><span id='PeerAccessUnsupported.v' class='invisible'><code>PeerAccessUnsupported(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.InvalidPtx' class='variant'><span id='InvalidPtx.v' class='invisible'><code>InvalidPtx(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided PTX.</p>
+</div><span id='variant.InvalidGraphicsContent' class='variant'><span id='InvalidGraphicsContent.v' class='invisible'><code>InvalidGraphicsContent(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.InvalidSource' class='variant'><span id='InvalidSource.v' class='invisible'><code>InvalidSource(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.FileNotFound' class='variant'><span id='FileNotFound.v' class='invisible'><code>FileNotFound(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.SharedObjectSymbolNotFound' class='variant'><span id='SharedObjectSymbolNotFound.v' class='invisible'><code>SharedObjectSymbolNotFound(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.SharedObjectInitFailed' class='variant'><span id='SharedObjectInitFailed.v' class='invisible'><code>SharedObjectInitFailed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.OperatingSystem' class='variant'><span id='OperatingSystem.v' class='invisible'><code>OperatingSystem(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.InvalidHandle' class='variant'><span id='InvalidHandle.v' class='invisible'><code>InvalidHandle(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.NotFound' class='variant'><span id='NotFound.v' class='invisible'><code>NotFound(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.NotReady' class='variant'><span id='NotReady.v' class='invisible'><code>NotReady(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.IllegalAddress' class='variant'><span id='IllegalAddress.v' class='invisible'><code>IllegalAddress(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.LaunchOutOfResources' class='variant'><span id='LaunchOutOfResources.v' class='invisible'><code>LaunchOutOfResources(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.LaunchTimeout' class='variant'><span id='LaunchTimeout.v' class='invisible'><code>LaunchTimeout(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.LauncIncompatibleTexturing' class='variant'><span id='LauncIncompatibleTexturing.v' class='invisible'><code>LauncIncompatibleTexturing(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.PeerAccessAlreadyEnabled' class='variant'><span id='PeerAccessAlreadyEnabled.v' class='invisible'><code>PeerAccessAlreadyEnabled(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.PeerAccessNotEnabled' class='variant'><span id='PeerAccessNotEnabled.v' class='invisible'><code>PeerAccessNotEnabled(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.PrimaryContextActive' class='variant'><span id='PrimaryContextActive.v' class='invisible'><code>PrimaryContextActive(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.ContextIsDestroyed' class='variant'><span id='ContextIsDestroyed.v' class='invisible'><code>ContextIsDestroyed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.Assert' class='variant'><span id='Assert.v' class='invisible'><code>Assert(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.TooManyPeers' class='variant'><span id='TooManyPeers.v' class='invisible'><code>TooManyPeers(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.HostMemoryAlreadyRegistered' class='variant'><span id='HostMemoryAlreadyRegistered.v' class='invisible'><code>HostMemoryAlreadyRegistered(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.HostMemoryNotRegistered' class='variant'><span id='HostMemoryNotRegistered.v' class='invisible'><code>HostMemoryNotRegistered(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.HardwareStackError' class='variant'><span id='HardwareStackError.v' class='invisible'><code>HardwareStackError(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.IllegalInstruction' class='variant'><span id='IllegalInstruction.v' class='invisible'><code>IllegalInstruction(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.MisalignedAddress' class='variant'><span id='MisalignedAddress.v' class='invisible'><code>MisalignedAddress(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.InvalidAddressSpace' class='variant'><span id='InvalidAddressSpace.v' class='invisible'><code>InvalidAddressSpace(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.InvalidPc' class='variant'><span id='InvalidPc.v' class='invisible'><code>InvalidPc(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.LaunchFailed' class='variant'><span id='LaunchFailed.v' class='invisible'><code>LaunchFailed(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.NotPermitted' class='variant'><span id='NotPermitted.v' class='invisible'><code>NotPermitted(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.NotSupported' class='variant'><span id='NotSupported.v' class='invisible'><code>NotSupported(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><span id='variant.Unknown' class='variant'><span id='Unknown.v' class='invisible'><code>Unknown(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/api/driver/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/api/driver/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/api/driver/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/api/driver/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/api/driver/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/api/driver/error.rs.html#124-186' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class="method"><span id='fmt.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html" title="trait std::error::Error">Error</a> for <a class="enum" href="../../../coaster/frameworks/cuda/enum.DriverError.html" title="enum coaster::frameworks::cuda::DriverError">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/api/driver/error.rs.html#188-312' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.description' class="method"><span id='description.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#tymethod.description' class='fnname'>description</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h4>
+<div class='docblock'><p>A short description of the error. <a href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html#tymethod.description">Read more</a></p>
+</div><h4 id='method.cause' class="method"><span id='cause.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#method.cause' class='fnname'>cause</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="trait" href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html" title="trait std::error::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>The lower-level cause of this error, if any. <a href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html#method.cause">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "coaster";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

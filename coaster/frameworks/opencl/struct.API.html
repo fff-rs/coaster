@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `API` struct in crate `coaster`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, API">
+
+    <title>coaster::frameworks::opencl::API - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct API</p><div class="block items"><ul><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../../index.html'>coaster</a>::<wbr><a href='../index.html'>frameworks</a>::<wbr><a href='index.html'>opencl</a></p><script>window.sidebarCurrent = {name: 'API', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>coaster</a>::<wbr><a href='../index.html'>frameworks</a>::<wbr><a href='index.html'>opencl</a>::<wbr><a class="struct" href=''>API</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/mod.rs.html#7' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct API;</pre><div class='docblock'><p>Defines the OpenCL API.</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../coaster/frameworks/opencl/struct.API.html" title="struct coaster::frameworks::opencl::API">API</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/context.rs.html#10-52' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.create_context' class="method"><span id='create_context.v' class='invisible'><code>fn <a href='#method.create_context' class='fnname'>create_context</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;devices: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/device/struct.Device.html" title="struct coaster::frameworks::opencl::device::Device">Device</a>&gt;, <br>&nbsp;&nbsp;&nbsp;&nbsp;properties: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="https://doc.rust-lang.org/libc/x86_64-unknown-linux-gnu/libc/type.intptr_t.html" title="type libc::intptr_t">intptr_t</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;callback: extern &quot;C&quot; fn(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="type" href="https://doc.rust-lang.org/libc/x86_64-unknown-linux-gnu/libc/unix/notbsd/linux/other/b64/x86_64/type.c_char.html" title="type libc::unix::notbsd::linux::other::b64::x86_64::c_char">c_char</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/libc/x86_64-unknown-linux-gnu/libc/enum.c_void.html" title="enum libc::c_void">c_void</a>, _: <a class="type" href="https://doc.rust-lang.org/libc/x86_64-unknown-linux-gnu/libc/type.size_t.html" title="type libc::size_t">size_t</a>, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/libc/x86_64-unknown-linux-gnu/libc/enum.c_void.html" title="enum libc::c_void">c_void</a>), <br>&nbsp;&nbsp;&nbsp;&nbsp;user_data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/libc/x86_64-unknown-linux-gnu/libc/enum.c_void.html" title="enum libc::c_void">c_void</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/libc/x86_64-unknown-linux-gnu/libc/enum.c_void.html" title="enum libc::c_void">c_void</a>, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Creates a OpenCL context.</p>
+
+<p>An OpenCL context is created with one or more devices. Contexts are used by the OpenCL
+runtime for managing objects such as command-queues, memory, program and kernel objects
+and for executing kernels on one or more devices specified in the context.
+An OpenCL context is a synonym to a Coaster device.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../coaster/frameworks/opencl/struct.API.html" title="struct coaster::frameworks::opencl::API">API</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/device.rs.html#13-97' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.load_devices' class="method"><span id='load_devices.v' class='invisible'><code>fn <a href='#method.load_devices' class='fnname'>load_devices</a>(platform: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/platform/struct.Platform.html" title="struct coaster::frameworks::opencl::platform::Platform">Platform</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/device/struct.Device.html" title="struct coaster::frameworks::opencl::device::Device">Device</a>&gt;, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Returns fully initialized devices for a specific platform.</p>
+
+<p>Combines the fetching of all device ids and the fetching of the individual device
+information.</p>
+</div><h4 id='method.load_device_list' class="method"><span id='load_device_list.v' class='invisible'><code>fn <a href='#method.load_device_list' class='fnname'>load_device_list</a>(platform: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/platform/struct.Platform.html" title="struct coaster::frameworks::opencl::platform::Platform">Platform</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/device/struct.Device.html" title="struct coaster::frameworks::opencl::device::Device">Device</a>&gt;, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Returns a list of available devices for the provided platform.</p>
+</div><h4 id='method.load_device_info' class="method"><span id='load_device_info.v' class='invisible'><code>fn <a href='#method.load_device_info' class='fnname'>load_device_info</a>(device: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/device/struct.Device.html" title="struct coaster::frameworks::opencl::device::Device">Device</a>, info: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/device/struct.DeviceInfo.html" title="struct coaster::frameworks::opencl::device::DeviceInfo">DeviceInfo</a>, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Returns the requested DeviceInfo for the provided device.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../coaster/frameworks/opencl/struct.API.html" title="struct coaster::frameworks::opencl::API">API</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/memory.rs.html#11-180' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.create_buffer' class="method"><span id='create_buffer.v' class='invisible'><code>fn <a href='#method.create_buffer' class='fnname'>create_buffer</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/context/struct.Context.html" title="struct coaster::frameworks::opencl::context::Context">Context</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;flags: <a class="struct" href="../../../coaster/frameworks/opencl/memory/struct.MemoryFlags.html" title="struct coaster::frameworks::opencl::memory::MemoryFlags">MemoryFlags</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;host_pointer: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/memory/struct.Memory.html" title="struct coaster::frameworks::opencl::memory::Memory">Memory</a>, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Allocates memory on the OpenCL device.</p>
+
+<p>A buffer object stores a one-dimensional collection of elements.  Elements of a buffer
+object can be a scalar data type (such as an int, float), vector data type, or a
+user-defined structure.
+Returns a memory id for the created buffer, which can now be writen to.</p>
+</div><h4 id='method.release_memory' class="method"><span id='release_memory.v' class='invisible'><code>fn <a href='#method.release_memory' class='fnname'>release_memory</a>(memory: &amp;mut <a class="struct" href="../../../coaster/frameworks/opencl/memory/struct.Memory.html" title="struct coaster::frameworks::opencl::memory::Memory">Memory</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Releases allocated memory from the OpenCL device.</p>
+</div><h4 id='method.read_from_memory' class="method"><span id='read_from_memory.v' class='invisible'><code>fn <a href='#method.read_from_memory' class='fnname'>read_from_memory</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;queue: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/queue/struct.Queue.html" title="struct coaster::frameworks::opencl::queue::Queue">Queue</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;mem: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/memory/struct.Memory.html" title="struct coaster::frameworks::opencl::memory::Memory">Memory</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;blocking_read: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;host_mem: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*mut </a><a class="enum" href="https://doc.rust-lang.org/libc/x86_64-unknown-linux-gnu/libc/enum.c_void.html" title="enum libc::c_void">c_void</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;event_wait_list: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../../coaster/frameworks/opencl/event/struct.Event.html" title="struct coaster::frameworks::opencl::event::Event">Event</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/event/struct.Event.html" title="struct coaster::frameworks::opencl::event::Event">Event</a>, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Reads from a OpenCL memory object to the host memory.</p>
+
+<p>With write_to_memory you can do the opposite, write from the host memory to a OpenCL memory object.</p>
+</div><h4 id='method.write_to_memory' class="method"><span id='write_to_memory.v' class='invisible'><code>fn <a href='#method.write_to_memory' class='fnname'>write_to_memory</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;queue: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/queue/struct.Queue.html" title="struct coaster::frameworks::opencl::queue::Queue">Queue</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;mem: &amp;mut <a class="struct" href="../../../coaster/frameworks/opencl/memory/struct.Memory.html" title="struct coaster::frameworks::opencl::memory::Memory">Memory</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;blocking_write: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;host_mem: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.pointer.html">*const </a><a class="enum" href="https://doc.rust-lang.org/libc/x86_64-unknown-linux-gnu/libc/enum.c_void.html" title="enum libc::c_void">c_void</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;event_wait_list: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../../coaster/frameworks/opencl/event/struct.Event.html" title="struct coaster::frameworks::opencl::event::Event">Event</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/event/struct.Event.html" title="struct coaster::frameworks::opencl::event::Event">Event</a>, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Write to a OpenCL memory object from host memory.</p>
+
+<p>With read_from_memory you can do the opposite, read from a OpenCL memory object to host memory.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../coaster/frameworks/opencl/struct.API.html" title="struct coaster::frameworks::opencl::API">API</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/platform.rs.html#11-53' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.load_platforms' class="method"><span id='load_platforms.v' class='invisible'><code>fn <a href='#method.load_platforms' class='fnname'>load_platforms</a>() -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/platform/struct.Platform.html" title="struct coaster::frameworks::opencl::platform::Platform">Platform</a>&gt;, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Returns a list of available platforms.</p>
+
+<p>The OpenCL platform layer which implements platform-specific features that allow
+applications to</p>
+
+<ul>
+<li>query OpenCL devices,</li>
+<li>obtain device configuration information and</li>
+<li>create OpenCL contexts using one or more devices.</li>
+</ul>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../../../coaster/frameworks/opencl/struct.API.html" title="struct coaster::frameworks::opencl::API">API</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/queue.rs.html#11-114' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.create_queue' class="method"><span id='create_queue.v' class='invisible'><code>fn <a href='#method.create_queue' class='fnname'>create_queue</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;context: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/context/struct.Context.html" title="struct coaster::frameworks::opencl::context::Context">Context</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/device/struct.Device.html" title="struct coaster::frameworks::opencl::device::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;queue_flags: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/queue/struct.QueueFlags.html" title="struct coaster::frameworks::opencl::queue::QueueFlags">QueueFlags</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/queue/struct.Queue.html" title="struct coaster::frameworks::opencl::queue::Queue">Queue</a>, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Returns a command queue for a specified context and device.</p>
+
+<p>OpenCL command queues are used to control memory allocation and operations
+for a single device.</p>
+</div><h4 id='method.release_queue' class="method"><span id='release_queue.v' class='invisible'><code>fn <a href='#method.release_queue' class='fnname'>release_queue</a>(queue: &amp;mut <a class="struct" href="../../../coaster/frameworks/opencl/queue/struct.Queue.html" title="struct coaster::frameworks::opencl::queue::Queue">Queue</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Releases command queue from the OpenCL device.</p>
+</div><h4 id='method.enqueue_kernel' class="method"><span id='enqueue_kernel.v' class='invisible'><code>fn <a href='#method.enqueue_kernel' class='fnname'>enqueue_kernel</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;queue: &amp;mut <a class="struct" href="../../../coaster/frameworks/opencl/queue/struct.Queue.html" title="struct coaster::frameworks::opencl::queue::Queue">Queue</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;kernel: &amp;<a class="struct" href="../../../coaster/frameworks/opencl/program/struct.Program.html" title="struct coaster::frameworks::opencl::program::Program">Program</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;work_dim: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;global_work_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;global_work_size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;local_work_size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;event_wait_list: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../../coaster/frameworks/opencl/event/struct.Event.html" title="struct coaster::frameworks::opencl::event::Event">Event</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../../coaster/frameworks/opencl/event/struct.Event.html" title="struct coaster::frameworks::opencl::event::Event">Event</a>, <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Enqueue program in a command queue.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="struct" href="../../../coaster/frameworks/opencl/struct.API.html" title="struct coaster::frameworks::opencl::API">API</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/mod.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="struct" href="../../../coaster/frameworks/opencl/struct.API.html" title="struct coaster::frameworks::opencl::API">API</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/mod.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="struct" href="../../../coaster/frameworks/opencl/struct.API.html" title="struct coaster::frameworks::opencl::API">API</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/mod.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct" href="../../../coaster/frameworks/opencl/struct.API.html" title="struct coaster::frameworks::opencl::API">API</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "coaster";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

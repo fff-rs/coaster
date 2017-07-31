@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Event","Defines a OpenCL Event;"]]});

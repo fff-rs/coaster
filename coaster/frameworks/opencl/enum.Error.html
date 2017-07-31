@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Error` enum in crate `coaster`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Error">
+
+    <title>coaster::frameworks::opencl::Error - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum Error</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='../../index.html'>coaster</a>::<wbr><a href='../index.html'>frameworks</a>::<wbr><a href='index.html'>opencl</a></p><script>window.sidebarCurrent = {name: 'Error', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../../index.html'>coaster</a>::<wbr><a href='../index.html'>frameworks</a>::<wbr><a href='index.html'>opencl</a>::<wbr><a class="enum" href=''>Error</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/error.rs.html#7-62' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Error {
+    InvalidPlatform(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidDevice(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidDeviceType(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidContext(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidMemObject(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidCommandQueue(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidEventWaitList(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidValue(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidProperty(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidOperation(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidBufferSize(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidHostPtr(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidWorkDimension(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidWorkItemSize(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidWorkGroupSize(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidGlobalOffset(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidKernel(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidKernelArgs(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    InvalidQueueProperties(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    DeviceNotFound(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    DeviceNotAvailable(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    MemObjectAllocationFailure(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    MisalignedSubBufferOffset(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    ExecStatusErrorForEventsInWaitList(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    OutOfResources(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    OutOfHostMemory(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+    Other(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>),
+}</pre><div class='docblock'><p>Defines OpenCL errors.</p>
+</div><h2 id='variants' class='variants'>Variants</h2>
+<span id='variant.InvalidPlatform' class='variant'><span id='InvalidPlatform.v' class='invisible'><code>InvalidPlatform(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided platform.</p>
+</div><span id='variant.InvalidDevice' class='variant'><span id='InvalidDevice.v' class='invisible'><code>InvalidDevice(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided device param.</p>
+</div><span id='variant.InvalidDeviceType' class='variant'><span id='InvalidDeviceType.v' class='invisible'><code>InvalidDeviceType(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided platform.</p>
+</div><span id='variant.InvalidContext' class='variant'><span id='InvalidContext.v' class='invisible'><code>InvalidContext(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided context.</p>
+</div><span id='variant.InvalidMemObject' class='variant'><span id='InvalidMemObject.v' class='invisible'><code>InvalidMemObject(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided memory object.</p>
+</div><span id='variant.InvalidCommandQueue' class='variant'><span id='InvalidCommandQueue.v' class='invisible'><code>InvalidCommandQueue(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided command queue.</p>
+</div><span id='variant.InvalidEventWaitList' class='variant'><span id='InvalidEventWaitList.v' class='invisible'><code>InvalidEventWaitList(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided event list.</p>
+</div><span id='variant.InvalidValue' class='variant'><span id='InvalidValue.v' class='invisible'><code>InvalidValue(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided param(s).</p>
+</div><span id='variant.InvalidProperty' class='variant'><span id='InvalidProperty.v' class='invisible'><code>InvalidProperty(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided property param.</p>
+</div><span id='variant.InvalidOperation' class='variant'><span id='InvalidOperation.v' class='invisible'><code>InvalidOperation(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided operation param.</p>
+</div><span id='variant.InvalidBufferSize' class='variant'><span id='InvalidBufferSize.v' class='invisible'><code>InvalidBufferSize(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided buffer size.</p>
+</div><span id='variant.InvalidHostPtr' class='variant'><span id='InvalidHostPtr.v' class='invisible'><code>InvalidHostPtr(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided host pointer.</p>
+</div><span id='variant.InvalidWorkDimension' class='variant'><span id='InvalidWorkDimension.v' class='invisible'><code>InvalidWorkDimension(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided work dimensions</p>
+</div><span id='variant.InvalidWorkItemSize' class='variant'><span id='InvalidWorkItemSize.v' class='invisible'><code>InvalidWorkItemSize(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided work item size</p>
+</div><span id='variant.InvalidWorkGroupSize' class='variant'><span id='InvalidWorkGroupSize.v' class='invisible'><code>InvalidWorkGroupSize(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided work group size</p>
+</div><span id='variant.InvalidGlobalOffset' class='variant'><span id='InvalidGlobalOffset.v' class='invisible'><code>InvalidGlobalOffset(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided global offset</p>
+</div><span id='variant.InvalidKernel' class='variant'><span id='InvalidKernel.v' class='invisible'><code>InvalidKernel(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided kernel</p>
+</div><span id='variant.InvalidKernelArgs' class='variant'><span id='InvalidKernelArgs.v' class='invisible'><code>InvalidKernelArgs(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided kernel arguments</p>
+</div><span id='variant.InvalidQueueProperties' class='variant'><span id='InvalidQueueProperties.v' class='invisible'><code>InvalidQueueProperties(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with provided properties for the device.</p>
+</div><span id='variant.DeviceNotFound' class='variant'><span id='DeviceNotFound.v' class='invisible'><code>DeviceNotFound(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with device availability.</p>
+</div><span id='variant.DeviceNotAvailable' class='variant'><span id='DeviceNotAvailable.v' class='invisible'><code>DeviceNotAvailable(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with device availability.</p>
+</div><span id='variant.MemObjectAllocationFailure' class='variant'><span id='MemObjectAllocationFailure.v' class='invisible'><code>MemObjectAllocationFailure(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure to allocate memory.</p>
+</div><span id='variant.MisalignedSubBufferOffset' class='variant'><span id='MisalignedSubBufferOffset.v' class='invisible'><code>MisalignedSubBufferOffset(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with sub buffer offset.</p>
+</div><span id='variant.ExecStatusErrorForEventsInWaitList' class='variant'><span id='ExecStatusErrorForEventsInWaitList.v' class='invisible'><code>ExecStatusErrorForEventsInWaitList(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure with events in wait list.</p>
+</div><span id='variant.OutOfResources' class='variant'><span id='OutOfResources.v' class='invisible'><code>OutOfResources(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure to allocate resources on the device.</p>
+</div><span id='variant.OutOfHostMemory' class='variant'><span id='OutOfHostMemory.v' class='invisible'><code>OutOfHostMemory(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure to allocate resources on the host.</p>
+</div><span id='variant.Other' class='variant'><span id='Other.v' class='invisible'><code>Other(&amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>)</code></span></span><div class='docblock'><p>Failure not closer defined.</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a></code></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/error.rs.html#5' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html" title="trait core::fmt::Display">Display</a> for <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/error.rs.html#64-96' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class="method"><span id='fmt.v-1' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html" title="trait std::error::Error">Error</a> for <a class="enum" href="../../../coaster/frameworks/opencl/enum.Error.html" title="enum coaster::frameworks::opencl::Error">Error</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/opencl/api/error.rs.html#98-162' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.description' class="method"><span id='description.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#tymethod.description' class='fnname'>description</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h4>
+<div class='docblock'><p>A short description of the error. <a href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html#tymethod.description">Read more</a></p>
+</div><h4 id='method.cause' class="method"><span id='cause.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html#method.cause' class='fnname'>cause</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="trait" href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html" title="trait std::error::Error">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>The lower-level cause of this error, if any. <a href="https://doc.rust-lang.org/nightly/std/error/trait.Error.html#method.cause">Read more</a></p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "coaster";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

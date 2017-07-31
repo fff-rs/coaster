@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `IDevice` trait in crate `coaster`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, IDevice">
+
+    <title>coaster::device::IDevice - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait IDevice</p><div class="block items"><ul><li><a href="#associated-types">Associated Types</a></li><li><a href="#required-methods">Required Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='../index.html'>coaster</a>::<wbr><a href='index.html'>device</a></p><script>window.sidebarCurrent = {name: 'IDevice', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../index.html'>coaster</a>::<wbr><a href='index.html'>device</a>::<wbr><a class="trait" href=''>IDevice</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/coaster/device.rs.html#24-37' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait IDevice <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/any/trait.Any.html" title="trait core::any::Any">Any</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/any/trait.Any.html" title="trait core::any::Any">Any</a> + <a class="trait" href="../../coaster/device/trait.MemorySync.html" title="trait coaster::device::MemorySync">MemorySync</a>,&nbsp;</span>{
+    type <a href='#associatedtype.H' class="type">H</a>: <a class="trait" href="../../coaster/hardware/trait.IHardware.html" title="trait coaster::hardware::IHardware">IHardware</a>;
+    type <a href='#associatedtype.M' class="type">M</a>: <a class="trait" href="../../coaster/device/trait.IMemory.html" title="trait coaster::device::IMemory">IMemory</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/any/trait.Any.html" title="trait core::any::Any">Any</a>;
+    fn <a href='#tymethod.id' class='fnname'>id</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a>;
+    fn <a href='#tymethod.hardwares' class='fnname'>hardwares</a>(&amp;self) -&gt; &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;Self::<a class="trait" href="../../coaster/device/trait.IDevice.html" title="trait coaster::device::IDevice">H</a>&gt;;
+    fn <a href='#tymethod.alloc_memory' class='fnname'>alloc_memory</a>(&amp;self, size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self::<a class="trait" href="../../coaster/device/trait.IDevice.html" title="trait coaster::device::IDevice">M</a>, <a class="enum" href="../../coaster/device/enum.Error.html" title="enum coaster::device::Error">Error</a>&gt;;
+}</pre><div class='docblock'><p>Specifies Hardware behavior across frameworks.</p>
+</div>
+            <h2 id='associated-types'>Associated Types</h2>
+            <div class='methods'>
+        <h3 id='associatedtype.H' class='method'><span id='H.t' class='invisible'><code>type <a href='#associatedtype.H' class="type">H</a>: <a class="trait" href="../../coaster/hardware/trait.IHardware.html" title="trait coaster::hardware::IHardware">IHardware</a></code></span></h3><div class='docblock'><p>The Hardware representation for this Device.</p>
+</div><h3 id='associatedtype.M' class='method'><span id='M.t' class='invisible'><code>type <a href='#associatedtype.M' class="type">M</a>: <a class="trait" href="../../coaster/device/trait.IMemory.html" title="trait coaster::device::IMemory">IMemory</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/any/trait.Any.html" title="trait core::any::Any">Any</a></code></span></h3><div class='docblock'><p>The Memory representation for this Device.</p>
+</div></div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.id' class='method'><span id='id.v' class='invisible'><code>fn <a href='#tymethod.id' class='fnname'>id</a>(&amp;self) -&gt; &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.isize.html">isize</a></code></span></h3><div class='docblock'><p>Returns the unique identifier of the Device.</p>
+</div><h3 id='tymethod.hardwares' class='method'><span id='hardwares.v' class='invisible'><code>fn <a href='#tymethod.hardwares' class='fnname'>hardwares</a>(&amp;self) -&gt; &amp;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;Self::<a class="trait" href="../../coaster/device/trait.IDevice.html" title="trait coaster::device::IDevice">H</a>&gt;</code></span></h3><div class='docblock'><p>Returns the hardwares, which define the Device.</p>
+</div><h3 id='tymethod.alloc_memory' class='method'><span id='alloc_memory.v' class='invisible'><code>fn <a href='#tymethod.alloc_memory' class='fnname'>alloc_memory</a>(&amp;self, size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self::<a class="trait" href="../../coaster/device/trait.IDevice.html" title="trait coaster::device::IDevice">M</a>, <a class="enum" href="../../coaster/device/enum.Error.html" title="enum coaster::device::Error">Error</a>&gt;</code></span></h3><div class='docblock'><p>Allocate memory on the Device.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl IDevice for <a class="struct" href="../../coaster/frameworks/native/device/struct.Cpu.html" title="struct coaster::frameworks::native::device::Cpu">Cpu</a></code></li>
+<li><code>impl IDevice for coaster::frameworks::opencl::context::<a class="struct" href="../../coaster/frameworks/opencl/context/struct.Context.html" title="struct coaster::frameworks::opencl::context::Context">Context</a></code></li>
+<li><code>impl IDevice for coaster::frameworks::cuda::context::<a class="struct" href="../../coaster/frameworks/cuda/context/struct.Context.html" title="struct coaster::frameworks::cuda::context::Context">Context</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../implementors/coaster/device/trait.IDevice.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "coaster";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

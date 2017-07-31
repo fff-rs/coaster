@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Program","Defines a OpenCL Program."]]});

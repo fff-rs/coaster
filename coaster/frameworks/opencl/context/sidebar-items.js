@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Context","Defines a OpenCL Context."]]});
