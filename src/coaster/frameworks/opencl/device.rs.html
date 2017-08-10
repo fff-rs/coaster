@@ -351,10 +351,10 @@
     }
 }
 
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">PartialEq</span>, <span class="ident">Clone</span>)]</span>
 <span class="doccomment">/// Defines a OpenCL Device.</span>
 <span class="doccomment">///</span>
-<span class="doccomment">/// Can later be transformed into a [Collenchyma hardware][hardware].</span>
+<span class="doccomment">/// Can later be transformed into a [Coaster hardware][hardware].</span>
 <span class="doccomment">/// [hardware]: ../../hardware/index.html</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Device</span> {
     <span class="ident">id</span>: <span class="ident">isize</span>,

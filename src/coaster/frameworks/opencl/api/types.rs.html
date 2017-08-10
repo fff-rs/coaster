@@ -567,7 +567,6 @@
 }
 
 
-
 <span class="macro">enum_from_primitive</span><span class="macro">!</span> {
 <span class="doccomment">/// OpenCL error codes.</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">PartialEq</span>, <span class="ident">Debug</span>)]</span>
@@ -671,7 +670,7 @@
 <span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_DEVICE_TYPE_ALL</span>:                          <span class="ident">bitfield</span> <span class="op">=</span> <span class="number">0xFFFFFFFF</span>;
 
 <span class="comment">/* cl_device_info */</span>
-<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CL_DEVICE_TYPE</span>:                               <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1000</span>;
+<span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_DEVICE_TYPE</span>:                               <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1000</span>;
 <span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_DEVICE_VENDOR_ID</span>:                          <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1001</span>;
 <span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_DEVICE_MAX_COMPUTE_UNITS</span>:                  <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1002</span>;
 <span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_DEVICE_MAX_WORK_ITEM_DIMENSIONS</span>:           <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1003</span>;
@@ -761,13 +760,14 @@
 <span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_QUEUE_PROFILING_ENABLE</span>:                    <span class="ident">bitfield</span> <span class="op">=</span> <span class="number">1</span> <span class="op">&lt;&lt;</span> <span class="number">1</span>;
 
 <span class="comment">/* cl_context_info  */</span>
-<span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_CONTEXT_REFERENCE_COUNT</span>:                   <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1080</span>;
-<span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_CONTEXT_DEVICES</span>:                           <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1081</span>;
-<span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_CONTEXT_PROPERTIES</span>:                        <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1082</span>;
-<span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_CONTEXT_NUM_DEVICES</span>:                       <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1083</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CL_CONTEXT_REFERENCE_COUNT</span>:                   <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1080</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CL_CONTEXT_DEVICES</span>:                           <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1081</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CL_CONTEXT_PROPERTIES</span>:                        <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1082</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CL_CONTEXT_NUM_DEVICES</span>:                       <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1083</span>;
 
 <span class="comment">/* cl_context_info + cl_context_properties */</span>
-<span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_CONTEXT_PLATFORM</span>:                          <span class="ident">libc</span>::<span class="ident">intptr_t</span> <span class="op">=</span> <span class="number">0x1084</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CL_CONTEXT_PLATFORM</span>:                          <span class="ident">libc</span>::<span class="ident">intptr_t</span> <span class="op">=</span> <span class="number">0x1084</span>;
+<span class="kw">pub</span> <span class="kw">const</span> <span class="ident">CL_CONTEXT_INTEROP_USER_SYNC</span>:                 <span class="ident">libc</span>::<span class="ident">intptr_t</span> <span class="op">=</span> <span class="number">0x1085</span>;
 
 <span class="comment">/* cl_command_queue_info */</span>
 <span class="kw">pub</span> <span class="kw">static</span> <span class="ident">CL_QUEUE_CONTEXT</span>:                             <span class="ident">uint</span> <span class="op">=</span> <span class="number">0x1090</span>;

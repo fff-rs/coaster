@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["Context","Defines a OpenCL Context."]]});
+initSidebarItems({"enum":[["ContextInfo","OpenCL context info types. Each variant is returned from the same function, `get_context_info`."],["ContextInfoQuery","OpenCL context info constants, these ones are for the Query"],["ContextProperties","The individual properties for `ContextInfo::Properties`"]],"struct":[["Context","Defines a OpenCL Context."]]});
