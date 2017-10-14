@@ -19,7 +19,7 @@ impl API {
     /// An OpenCL context is a synonym to a Coaster device.
     pub fn create_context(
         devices: Vec<Device>,
-        properties: *const cl::context_properties,
+        properties: *const cl::context_properties, // FIXME use Vec<ContextProperties> instead, TODO serialize this according to OpenCL spec
         callback: extern fn (*const libc::c_char, *const libc::c_void, libc::size_t, *mut libc::c_void),
         user_data: *mut libc::c_void
     ) -> Result<cl::context_id, Error> {

@@ -78,7 +78,7 @@ impl Context {
                         API::create_context(devices.clone(), ptr::null(), callback, ptr::null_mut())?,
                         devices.clone());
         // initialize queue
-        context.queue_mut();
+        let _ = context.queue_mut();
         Ok(context)
     }
 

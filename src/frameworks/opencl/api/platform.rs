@@ -29,7 +29,7 @@ impl API {
         let guard = PLATFORM_MUTEX.lock();
         try!(unsafe {API::ffi_get_platform_ids(0, ptr::null_mut(), (&mut num_platforms))});
 
-        let mut ids: Vec<cl::device_id> = repeat(0 as cl::device_id).take(num_platforms as usize).collect();
+        let mut ids: Vec<cl::platform_id> = repeat(0 as cl::platform_id).take(num_platforms as usize).collect();
 
         try!(unsafe {API::ffi_get_platform_ids(num_platforms, ids.as_mut_ptr(), (&mut num_platforms))});
 

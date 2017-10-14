@@ -17,7 +17,7 @@ mod backend_spec {
         fn it_can_use_ibackend_trait_object() {
             let framework = Native::new();
             let hardwares = framework.hardwares().to_vec();
-            let backend_config = BackendConfig::new(framework, &hardwares);
+            let backend_config = BackendConfig::new(&framework, &hardwares);
             let backend = Rc::new(Backend::new(backend_config).unwrap());
             use_ibackend(backend);
         }
@@ -44,14 +44,16 @@ mod backend_spec {
 
         #[test]
         fn it_can_create_default_backend() {
-            assert!(Backend::<OpenCL>::default().is_ok());
+            let backend = Backend::<OpenCL>::default();
+            assert!(backend.is_ok());
         }
 
         #[test]
         fn it_can_manually_create_backend() {
             let framework = OpenCL::new();
             let hardwares = framework.hardwares().to_vec();
-            let backend_config = BackendConfig::new(framework, &hardwares);
+            let hardwares = hardwares[1..2].to_vec();
+            let backend_config = BackendConfig::new(&framework, &hardwares);
             let backend = Backend::new(backend_config);
             println!("{:?}", backend);
         }

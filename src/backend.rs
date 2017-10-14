@@ -64,7 +64,7 @@ pub struct Backend<F: IFramework> {
 
 /// Defines the functionality of the Backend.
 impl<F: IFramework + Clone> Backend<F> {
-    /// Initialize a new native Backend from a BackendConfig.
+    /// Initialize a new Backend from a BackendConfig.
     pub fn new(config: BackendConfig<F>) -> Result<Backend<F>, Error> {
         let device = try!(config.framework.new_device(config.hardwares));
         Ok(
@@ -105,10 +105,10 @@ pub trait IBackend
 
     /// Try to create a default backend.
     fn default() -> Result<Backend<Self::F>, Error> where Self: Sized {
-        let hw_framework = Self::F::new();
-        let hardwares = hw_framework.hardwares();
-        let framework = Self::F::new(); // dirty dirty hack to get around borrowing
-        let backend_config = BackendConfig::new(framework, hardwares);
+        let framework = Self::F::new();
+        let hardwares = framework.hardwares();
+        println!("Hardwares {}", hardwares.len());
+        let backend_config = BackendConfig::new(&framework, &hardwares);
         Backend::new(backend_config)
     }
 
@@ -127,7 +127,7 @@ pub struct BackendConfig<'a, F: IFramework + 'a> {
 
 impl<'a, F: IFramework + Clone> BackendConfig<'a, F> {
     /// Creates a new BackendConfig.
-    pub fn new(framework: F, hardwares: &'a [F::H]) -> BackendConfig<'a, F> {
+    pub fn new(framework: &F, hardwares: &'a [F::H]) -> BackendConfig<'a, F> {
         BackendConfig {
             framework: framework.clone(),
             hardwares: hardwares,

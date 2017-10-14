@@ -66,6 +66,8 @@ impl IFramework for OpenCL {
         let platforms = API::load_platforms()?;
 
         let mut hardware_container: Vec<Device> = vec!();
+        // TODO verify this is ok, can we really mix the devices of multiple platforms
+        // TODO verify this does not hurt if there are multiple icds for one device..
         for platform in &platforms {
             if let Ok(hardwares) = API::load_devices(platform) {
                 hardware_container.append(&mut hardwares.clone())
