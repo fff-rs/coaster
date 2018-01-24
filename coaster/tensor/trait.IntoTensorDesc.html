@@ -29,7 +29,7 @@
 
     <nav class="sidebar">
         
-        <p class='location'>Trait IntoTensorDesc</p><div class="block items"><ul><li><a href="#required-methods">Required Methods</a></li><li><a href="#foreign-impls">Implementations on Foreign Types</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='../index.html'>coaster</a>::<wbr><a href='index.html'>tensor</a></p><script>window.sidebarCurrent = {name: 'IntoTensorDesc', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+        <p class='location'>Trait IntoTensorDesc</p><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.into">into</a></div><a class="sidebar-title" href="#foreign-impls">Implementations on Foreign Types</a><div class="sidebar-links"><a href="#impl-IntoTensorDesc">()</a><a href="#impl-IntoTensorDesc">usize</a><a href="#impl-IntoTensorDesc">u32</a><a href="#impl-IntoTensorDesc">isize</a><a href="#impl-IntoTensorDesc">i32</a><a href="#impl-IntoTensorDesc">Vec&lt;usize&gt;</a><a href="#impl-IntoTensorDesc">&amp;&#39;a [usize]</a><a href="#impl-IntoTensorDesc">(usize, usize)</a><a href="#impl-IntoTensorDesc">(usize, usize, usize)</a><a href="#impl-IntoTensorDesc">(usize, usize, usize, usize)</a><a href="#impl-IntoTensorDesc">(usize, usize, usize, usize, usize)</a><a href="#impl-IntoTensorDesc">(usize, usize, usize, usize, usize, usize)</a><a href="#impl-IntoTensorDesc">[usize; 1]</a><a href="#impl-IntoTensorDesc">[usize; 2]</a><a href="#impl-IntoTensorDesc">[usize; 3]</a><a href="#impl-IntoTensorDesc">[usize; 4]</a><a href="#impl-IntoTensorDesc">[usize; 5]</a><a href="#impl-IntoTensorDesc">[usize; 6]</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>coaster</a>::<wbr><a href='index.html'>tensor</a></p><script>window.sidebarCurrent = {name: 'IntoTensorDesc', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <nav class="sub">
@@ -62,10 +62,10 @@ e.g. (2, 4) -&gt; [2,4] or () -&gt; [] or 2 -&gt; [2]</p>
             <div class='methods'>
         <h3 id='tymethod.into' class='method'><span id='into.v' class='invisible'><code>fn <a href='#tymethod.into' class='fnname'>into</a>(&amp;self) -&gt; <a class="type" href="../../coaster/tensor/type.TensorDesc.html" title="type coaster::tensor::TensorDesc">TensorDesc</a></code></span></h3><div class='docblock'><p>Converts the implemented type into a TensorDesc.</p>
 </div></div>
-                <h2 id='foreign-impls' class='section-header'>
+                <h2 id='foreign-impls' class='small-section-header'>
                   Implementations on Foreign Types<a href='#foreign-impls' class='anchor'></a>
                 </h2>
-            <h3 id='impl-IntoTensorDesc' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../coaster/tensor/trait.IntoTensorDesc.html" title="trait coaster::tensor::IntoTensorDesc">IntoTensorDesc</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a></code><a href='#impl-IntoTensorDesc' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#162-166' title='goto source code'>[src]</a></span></h3>
+            <h3 id='impl-IntoTensorDesc' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../coaster/tensor/trait.IntoTensorDesc.html" title="trait coaster::tensor::IntoTensorDesc">IntoTensorDesc</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a></code><a href='#impl-IntoTensorDesc' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#162-166' title='goto source code'>[src]</a></span></h3>
 <span class='docblock autohide'><div class='impl-items'><h4 id='method.into' class="method"><span id='into.v-1' class='invisible'><code>fn <a href='#method.into' class='fnname'>into</a>(&amp;self) -&gt; <a class="type" href="../../coaster/tensor/type.TensorDesc.html" title="type coaster::tensor::TensorDesc">TensorDesc</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#163-165' title='goto source code'>[src]</a></span></h4>
 </div></span><h3 id='impl-IntoTensorDesc-1' class='impl'><span class='in-band'><code>impl <a class="trait" href="../../coaster/tensor/trait.IntoTensorDesc.html" title="trait coaster::tensor::IntoTensorDesc">IntoTensorDesc</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.usize.html">usize</a></code><a href='#impl-IntoTensorDesc-1' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#168-172' title='goto source code'>[src]</a></span></h3>
 <span class='docblock autohide'><div class='impl-items'><h4 id='method.into-1' class="method"><span id='into.v-2' class='invisible'><code>fn <a href='#method.into' class='fnname'>into</a>(&amp;self) -&gt; <a class="type" href="../../coaster/tensor/type.TensorDesc.html" title="type coaster::tensor::TensorDesc">TensorDesc</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#169-171' title='goto source code'>[src]</a></span></h4>
@@ -125,13 +125,15 @@ e.g. (2, 4) -&gt; [2,4] or () -&gt; [] or 2 -&gt; [2]</p>
                     <dd>Show this help dialog</dd>
                     <dt>S</dt>
                     <dd>Focus the search field</dd>
-                    <dt>&larrb;</dt>
+                    <dt>↑</dt>
                     <dd>Move up in search results</dd>
-                    <dt>&rarrb;</dt>
+                    <dt>↓</dt>
                     <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
-                    <dt>+</dt>
+                    <dt style="width:31px;">+ / -</dt>
                     <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
