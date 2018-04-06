@@ -10,8 +10,11 @@
     <title>coaster::plugin - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
     
 
     
@@ -33,6 +36,13 @@
         <p class='location'>Module plugin</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#enums">Enums</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../index.html'>coaster</a></p><script>window.sidebarCurrent = {name: 'plugin', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
     </nav>
 
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
@@ -50,27 +60,23 @@
                        [<span class='inner'>&#x2212;</span>]
                    </a>
                </span><a class='srclink' href='../../src/coaster/plugin.rs.html#1-90' title='goto source code'>[src]</a></span></h1>
-<div class='docblock'><p>Provides helpers for explicit implementations of Backend <a href="../operation/index.html">Operations</a>.</p>
-
+<div class='docblock'><p>Provides helpers for explicit implementations of Backend [Operations][operation].
+[operation]: ../operation/index.html</p>
 <p>A Backend is a Rust struct like any other, therefore you probably would like to implement
 certain methods for the Backend. As the whole purpose of a Backend is to provide an
 abstraction over various computation devices and computation languages, these implemented
-methods will than be able to excute on different devices and use the full power of the machine&#39;s
+methods will than be able to excute on different devices and use the full power of the machine's
 underlying hardware.</p>
-
 <p>So extending the Backend with operations is easy. In Coaster we call crates, which provide
 operations for the Backend, Plugins. Plugins are usually a group of related operations of a common
 field. Two examples for Coaster Plugins are <a href="https://github.com/spearow/coaster-blas">BLAS</a> and <a href="https://github.com/spearow/coaster-nn">NN</a>.</p>
-
 <p>A Plugin does roughly two important things. It provides generic traits and the explicit implementation
 of these traits for one or (even better) all available Coaster Frameworks - common host CPU, OpenCL,
 CUDA.</p>
-
 <p>The structure of Plugin is pretty simple with as little overhead as possible. Macros make implementations
 even easier. If you would like to use specific Plugins for you Backend, all you need to do is
 set them as dependencies in your Cargo file in addition to the Coaster crate. The Plugin
 then automatically extends the Backend provided by Coaster.</p>
-
 <p>Extending the Backend with your own Plugin is a straight forward process.
 For now we recommend that you take a look at the general code structure of <a href="https://github.com/spearow/coaster-blas">Coaster-BLAS</a>
 or its documentation. Let us now about your Plugin on the Gitter chat, we are happy to feature
@@ -82,6 +88,7 @@ your Coaster Plugin on the README.</p>
                                   title='mod coaster::plugin::numeric_helpers'>numeric_helpers</a></td>
                            <td class='docblock-short'>
                                 <p>Describes numeric types and traits for a Plugin.</p>
+
                            </td>
                        </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
@@ -90,6 +97,7 @@ your Coaster Plugin on the README.</p>
                                   title='enum coaster::plugin::Error'>Error</a></td>
                            <td class='docblock-short'>
                                 <p>Defines a high-level Plugin Error.</p>
+
                            </td>
                        </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
 <table>
@@ -98,6 +106,7 @@ your Coaster Plugin on the README.</p>
                                   title='trait coaster::plugin::Float'>Float</a></td>
                            <td class='docblock-short'>
                                 <p>Generic trait for floating point numbers</p>
+
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>
@@ -112,20 +121,22 @@ your Coaster Plugin on the README.</p>
                 <h2>Keyboard Shortcuts</h2>
 
                 <dl>
-                    <dt>?</dt>
+                    <dt><kbd>?</kbd></dt>
                     <dd>Show this help dialog</dd>
-                    <dt>S</dt>
+                    <dt><kbd>S</kbd></dt>
                     <dd>Focus the search field</dd>
-                    <dt>↑</dt>
+                    <dt><kbd>↑</kbd></dt>
                     <dd>Move up in search results</dd>
-                    <dt>↓</dt>
+                    <dt><kbd>↓</kbd></dt>
                     <dd>Move down in search results</dd>
-                    <dt>↹</dt>
+                    <dt><kbd>↹</kbd></dt>
                     <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
+                    <dt><kbd>&#9166;</kbd></dt>
                     <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
                 </dl>
             </div>
 

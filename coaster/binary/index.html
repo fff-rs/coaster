@@ -10,8 +10,11 @@
     <title>coaster::binary - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
     
 
     
@@ -33,6 +36,13 @@
         <p class='location'>Module binary</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../index.html'>coaster</a></p><script>window.sidebarCurrent = {name: 'binary', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
     </nav>
 
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
@@ -51,19 +61,16 @@
                    </a>
                </span><a class='srclink' href='../../src/coaster/binary.rs.html#1-30' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p>Provides the generic functionality for a backend-specific implementation of a
-<a href="../libraries/index.html">library</a>.</p>
-
+[library][libraries].
+[libraries]: ../libraries/index.html</p>
 <p>A binary defines one or (more often) many operations, which share related functionalities and are
-provided by a specific <a href="../libraries/index.html">library</a> such as <a href="../libraries/blas/index.html">Blas</a>.</p>
-
-<p>A binary needs to be &#39;built&#39;, which is handled by the specific framework implementation of a
-binary representation, and returns initialized operations based on a <a href="../libraries/index.html">library</a>.</p>
-
+provided by a specific [library][libraries] such as <a href="../libraries/blas/index.html">Blas</a>.</p>
+<p>A binary needs to be 'built', which is handled by the specific framework implementation of a
+binary representation, and returns initialized operations based on a [library][libraries].</p>
 <p>You are ususally not interacting with a binary itself, but rather use it to construct the
 backend-agnostic operations, which can then be run and parallelized via an
 unified interface - <code>backend.__name_of_the_operation__</code>.</p>
-
-<h2 id='development' class='section-header'><a href='#development'>Development</a></h2>
+<h2 id="development" class="section-header"><a href="#development">Development</a></h2>
 <p>The funcionality provided here is used to construct specific Coaster binaries, which are
 used to construct the basic computation behavior that come shipped with Coaster. However, it should
 allow you to define and run your own backend-agnostic programs as well.</p>
@@ -74,6 +81,7 @@ allow you to define and run your own backend-agnostic programs as well.</p>
                                   title='trait coaster::binary::IBinary'>IBinary</a></td>
                            <td class='docblock-short'>
                                 <p>Defines the functionality for turning a library into backend-specific, executable operations.</p>
+
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>
@@ -88,20 +96,22 @@ allow you to define and run your own backend-agnostic programs as well.</p>
                 <h2>Keyboard Shortcuts</h2>
 
                 <dl>
-                    <dt>?</dt>
+                    <dt><kbd>?</kbd></dt>
                     <dd>Show this help dialog</dd>
-                    <dt>S</dt>
+                    <dt><kbd>S</kbd></dt>
                     <dd>Focus the search field</dd>
-                    <dt>↑</dt>
+                    <dt><kbd>↑</kbd></dt>
                     <dd>Move up in search results</dd>
-                    <dt>↓</dt>
+                    <dt><kbd>↓</kbd></dt>
                     <dd>Move down in search results</dd>
-                    <dt>↹</dt>
+                    <dt><kbd>↹</kbd></dt>
                     <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
+                    <dt><kbd>&#9166;</kbd></dt>
                     <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
                 </dl>
             </div>
 

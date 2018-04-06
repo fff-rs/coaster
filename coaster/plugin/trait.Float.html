@@ -10,8 +10,11 @@
     <title>coaster::plugin::Float - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
     
 
     
@@ -33,6 +36,13 @@
         <p class='location'>Trait Float</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.nan">nan</a><a href="#tymethod.infinity">infinity</a><a href="#tymethod.neg_infinity">neg_infinity</a><a href="#tymethod.neg_zero">neg_zero</a><a href="#tymethod.min_value">min_value</a><a href="#tymethod.min_positive_value">min_positive_value</a><a href="#tymethod.max_value">max_value</a><a href="#tymethod.is_nan">is_nan</a><a href="#tymethod.is_infinite">is_infinite</a><a href="#tymethod.is_finite">is_finite</a><a href="#tymethod.is_normal">is_normal</a><a href="#tymethod.classify">classify</a><a href="#tymethod.floor">floor</a><a href="#tymethod.ceil">ceil</a><a href="#tymethod.round">round</a><a href="#tymethod.trunc">trunc</a><a href="#tymethod.fract">fract</a><a href="#tymethod.abs">abs</a><a href="#tymethod.signum">signum</a><a href="#tymethod.is_sign_positive">is_sign_positive</a><a href="#tymethod.is_sign_negative">is_sign_negative</a><a href="#tymethod.mul_add">mul_add</a><a href="#tymethod.recip">recip</a><a href="#tymethod.powi">powi</a><a href="#tymethod.powf">powf</a><a href="#tymethod.sqrt">sqrt</a><a href="#tymethod.exp">exp</a><a href="#tymethod.exp2">exp2</a><a href="#tymethod.ln">ln</a><a href="#tymethod.log">log</a><a href="#tymethod.log2">log2</a><a href="#tymethod.log10">log10</a><a href="#tymethod.max">max</a><a href="#tymethod.min">min</a><a href="#tymethod.abs_sub">abs_sub</a><a href="#tymethod.cbrt">cbrt</a><a href="#tymethod.hypot">hypot</a><a href="#tymethod.sin">sin</a><a href="#tymethod.cos">cos</a><a href="#tymethod.tan">tan</a><a href="#tymethod.asin">asin</a><a href="#tymethod.acos">acos</a><a href="#tymethod.atan">atan</a><a href="#tymethod.atan2">atan2</a><a href="#tymethod.sin_cos">sin_cos</a><a href="#tymethod.exp_m1">exp_m1</a><a href="#tymethod.ln_1p">ln_1p</a><a href="#tymethod.sinh">sinh</a><a href="#tymethod.cosh">cosh</a><a href="#tymethod.tanh">tanh</a><a href="#tymethod.asinh">asinh</a><a href="#tymethod.acosh">acosh</a><a href="#tymethod.atanh">atanh</a><a href="#tymethod.integer_decode">integer_decode</a></div><a class="sidebar-title" href="#provided-methods">Provided Methods</a><div class="sidebar-links"><a href="#method.epsilon">epsilon</a><a href="#method.to_degrees">to_degrees</a><a href="#method.to_radians">to_radians</a></div><a class="sidebar-title" href="#foreign-impls">Implementations on Foreign Types</a><div class="sidebar-links"><a href="#impl-Float">f32</a><a href="#impl-Float">f64</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>coaster</a>::<wbr><a href='index.html'>plugin</a></p><script>window.sidebarCurrent = {name: 'Float', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
@@ -110,7 +120,6 @@
 <div class='item-spacer'></div>    fn <a href='#method.to_degrees' class='fnname'>to_degrees</a>(self) -&gt; Self { ... }
 <div class='item-spacer'></div>    fn <a href='#method.to_radians' class='fnname'>to_radians</a>(self) -&gt; Self { ... }
 }</pre><div class='docblock'><p>Generic trait for floating point numbers</p>
-
 <p>This trait is only available with the <code>std</code> feature.</p>
 </div>
             <h2 id='required-methods' class='small-section-header'>
@@ -334,7 +343,6 @@ number is <code>Float::nan()</code>.</p>
 
 <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">f64</span>::<span class="ident">NAN</span>.<span class="ident">abs</span>().<span class="ident">is_nan</span>());</pre>
 </div><h3 id='tymethod.signum' class='method'><span id='signum.v' class='invisible'><code>fn <a href='#tymethod.signum' class='fnname'>signum</a>(self) -&gt; Self</code></span></h3><div class='docblock'><p>Returns a number that represents the sign of <code>self</code>.</p>
-
 <ul>
 <li><code>1.0</code> if the number is positive, <code>+0.0</code> or <code>Float::infinity()</code></li>
 <li><code>-1.0</code> if the number is negative, <code>-0.0</code> or <code>Float::neg_infinity()</code></li>
@@ -406,7 +414,6 @@ a separate multiplication operation followed by an add.</p>
 
 <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">abs_difference</span> <span class="op">&lt;</span> <span class="number">1e-10</span>);</pre>
 </div><h3 id='tymethod.powi' class='method'><span id='powi.v' class='invisible'><code>fn <a href='#tymethod.powi' class='fnname'>powi</a>(self, n: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) -&gt; Self</code></span></h3><div class='docblock'><p>Raise a number to an integer power.</p>
-
 <p>Using this function is generally faster than using <code>powf</code></p>
 
 <pre class="rust rust-example-rendered">
@@ -426,7 +433,6 @@ a separate multiplication operation followed by an add.</p>
 
 <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">abs_difference</span> <span class="op">&lt;</span> <span class="number">1e-10</span>);</pre>
 </div><h3 id='tymethod.sqrt' class='method'><span id='sqrt.v' class='invisible'><code>fn <a href='#tymethod.sqrt' class='fnname'>sqrt</a>(self) -&gt; Self</code></span></h3><div class='docblock'><p>Take the square root of a number.</p>
-
 <p>Returns NaN if <code>self</code> is a negative number.</p>
 
 <pre class="rust rust-example-rendered">
@@ -533,7 +539,6 @@ a separate multiplication operation followed by an add.</p>
 
 <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">x</span>.<span class="ident">min</span>(<span class="ident">y</span>), <span class="ident">x</span>);</pre>
 </div><h3 id='tymethod.abs_sub' class='method'><span id='abs_sub.v' class='invisible'><code>fn <a href='#tymethod.abs_sub' class='fnname'>abs_sub</a>(self, other: Self) -&gt; Self</code></span></h3><div class='docblock'><p>The positive difference of two numbers.</p>
-
 <ul>
 <li>If <code>self &lt;= other</code>: <code>0:0</code></li>
 <li>Else: <code>self - other</code></li>
@@ -647,7 +652,6 @@ range [-pi/2, pi/2];</p>
 
 <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">abs_difference</span> <span class="op">&lt;</span> <span class="number">1e-10</span>);</pre>
 </div><h3 id='tymethod.atan2' class='method'><span id='atan2.v' class='invisible'><code>fn <a href='#tymethod.atan2' class='fnname'>atan2</a>(self, other: Self) -&gt; Self</code></span></h3><div class='docblock'><p>Computes the four quadrant arctangent of <code>self</code> (<code>y</code>) and <code>other</code> (<code>x</code>).</p>
-
 <ul>
 <li><code>x = 0</code>, <code>y = 0</code>: <code>0</code></li>
 <li><code>x &gt;= 0</code>: <code>arctan(y/x)</code> -&gt; <code>[-pi/2, pi/2]</code></li>
@@ -825,8 +829,7 @@ The original number can be recovered by <code>sign * mantissa * 2 ^ exponent</co
 <span class="kw">let</span> <span class="ident">x</span>: <span class="ident">f64</span> <span class="op">=</span> <span class="ident">Float</span>::<span class="ident">epsilon</span>();
 
 <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">x</span>, <span class="ident">f64</span>::<span class="ident">EPSILON</span>);</pre>
-
-<h1 id='panics' class='section-header'><a href='#panics'>Panics</a></h1>
+<h1 id="panics" class="section-header"><a href="#panics">Panics</a></h1>
 <p>The default implementation will panic if <code>f32::EPSILON</code> cannot
 be cast to <code>Self</code>.</p>
 </div><h3 id='method.to_degrees' class='method'><span id='to_degrees.v' class='invisible'><code>fn <a href='#method.to_degrees' class='fnname'>to_degrees</a>(self) -&gt; Self</code></span></h3><div class='docblock'><p>Converts radians to degrees.</p>
@@ -989,20 +992,22 @@ be cast to <code>Self</code>.</p>
                 <h2>Keyboard Shortcuts</h2>
 
                 <dl>
-                    <dt>?</dt>
+                    <dt><kbd>?</kbd></dt>
                     <dd>Show this help dialog</dd>
-                    <dt>S</dt>
+                    <dt><kbd>S</kbd></dt>
                     <dd>Focus the search field</dd>
-                    <dt>↑</dt>
+                    <dt><kbd>↑</kbd></dt>
                     <dd>Move up in search results</dd>
-                    <dt>↓</dt>
+                    <dt><kbd>↓</kbd></dt>
                     <dd>Move down in search results</dd>
-                    <dt>↹</dt>
+                    <dt><kbd>↹</kbd></dt>
                     <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
+                    <dt><kbd>&#9166;</kbd></dt>
                     <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
                 </dl>
             </div>
 

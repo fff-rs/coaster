@@ -10,8 +10,11 @@
     <title>coaster::tensor::SharedTensor - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
     
 
     
@@ -33,6 +36,13 @@
         <p class='location'>Struct SharedTensor</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.new">new</a><a href="#method.reshape">reshape</a><a href="#method.resize">resize</a><a href="#method.read">read</a><a href="#method.read_write">read_write</a><a href="#method.write_only">write_only</a><a href="#method.drop">drop</a><a href="#method.capacity">capacity</a><a href="#method.desc">desc</a><a href="#method.mem_size">mem_size</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='../index.html'>coaster</a>::<wbr><a href='index.html'>tensor</a></p><script>window.sidebarCurrent = {name: 'SharedTensor', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
@@ -50,32 +60,31 @@
                        [<span class='inner'>&#x2212;</span>]
                    </a>
                </span><a class='srclink' href='../../src/coaster/tensor.rs.html#92-98' title='goto source code'>[src]</a></span></h1>
-<pre class='rust struct'>pub struct SharedTensor&lt;T&gt; { /* fields omitted */ }</pre><div class='docblock'><p>Container that handles synchronization of <a href="../memory/index.html">Memory</a> of type <code>T</code>.</p>
+<pre class='rust struct'>pub struct SharedTensor&lt;T&gt; { /* fields omitted */ }</pre><div class='docblock'><p>Container that handles synchronization of [Memory][1] of type <code>T</code>.
+[1]: ../memory/index.html</p>
 </div>
                     <h2 id='methods' class='small-section-header'>
                       Methods<a href='#methods' class='anchor'></a>
                     </h2>
                 <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;T&gt; <a class="struct" href="../../coaster/tensor/struct.SharedTensor.html" title="struct coaster::tensor::SharedTensor">SharedTensor</a>&lt;T&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#276-526' title='goto source code'>[src]</a></span></h3>
 <div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>&lt;D:&nbsp;<a class="trait" href="../../coaster/tensor/trait.IntoTensorDesc.html" title="trait coaster::tensor::IntoTensorDesc">IntoTensorDesc</a>&gt;(desc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>D) -&gt; <a class="struct" href="../../coaster/tensor/struct.SharedTensor.html" title="struct coaster::tensor::SharedTensor">SharedTensor</a>&lt;T&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#279-286' title='goto source code'>[src]</a></span></h4>
-<div class='docblock'><p>Create new Tensor by allocating <a href="../memory/index.html">Memory</a> on a Device.</p>
+<div class='docblock'><p>Create new Tensor by allocating [Memory][1] on a Device.
+[1]: ../memory/index.html</p>
 </div><h4 id='method.reshape' class="method"><span id='reshape.v' class='invisible'><code>pub fn <a href='#method.reshape' class='fnname'>reshape</a>&lt;D:&nbsp;<a class="trait" href="../../coaster/tensor/trait.IntoTensorDesc.html" title="trait coaster::tensor::IntoTensorDesc">IntoTensorDesc</a>&gt;(&amp;mut self, desc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>D) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="enum" href="../../coaster/tensor/enum.Error.html" title="enum coaster::tensor::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#292-300' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Change the shape of the Tensor.</p>
-
 <p>Will return an Error if size of new shape is not equal to the old shape.
 If you want to change the shape to one of a different size, use <code>resize</code>.</p>
 </div><h4 id='method.resize' class="method"><span id='resize.v' class='invisible'><code>pub fn <a href='#method.resize' class='fnname'>resize</a>&lt;D:&nbsp;<a class="trait" href="../../coaster/tensor/trait.IntoTensorDesc.html" title="trait coaster::tensor::IntoTensorDesc">IntoTensorDesc</a>&gt;(&amp;mut self, desc: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>D) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.unit.html">()</a>, <a class="enum" href="../../coaster/tensor/enum.Error.html" title="enum coaster::tensor::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#308-313' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Change the size and shape of the Tensor.</p>
-
 <p><strong>Caution</strong>: Drops all copies which are not on the current device.</p>
-
-<p>&#39;reshape&#39; is preffered over this method if the size of the old and new shape
+<p>'reshape' is preffered over this method if the size of the old and new shape
 are identical because it will not reallocate memory.</p>
 </div><h4 id='method.read' class="method"><span id='read.v' class='invisible'><code>pub fn <a href='#method.read' class='fnname'>read</a>&lt;'a, D:&nbsp;<a class="trait" href="../../coaster/device/trait.IDevice.html" title="trait coaster::device::IDevice">IDevice</a>&gt;(&amp;'a self, device: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>D) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;&amp;'a D::<a class="type" href="../../coaster/device/trait.IDevice.html#associatedtype.M" title="type coaster::device::IDevice::M">M</a>, <a class="enum" href="../../coaster/tensor/enum.Error.html" title="enum coaster::tensor::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#426-439' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Get memory for reading on the specified <code>device</code>.
-Can fail if memory allocation fails, or if tensor wasn&#39;t initialized yet.</p>
+Can fail if memory allocation fails, or if tensor wasn't initialized yet.</p>
 </div><h4 id='method.read_write' class="method"><span id='read_write.v' class='invisible'><code>pub fn <a href='#method.read_write' class='fnname'>read_write</a>&lt;'a, D:&nbsp;<a class="trait" href="../../coaster/device/trait.IDevice.html" title="trait coaster::device::IDevice">IDevice</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>D<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;&amp;'a mut D::<a class="type" href="../../coaster/device/trait.IDevice.html#associatedtype.M" title="type coaster::device::IDevice::M">M</a>, <a class="enum" href="../../coaster/tensor/enum.Error.html" title="enum coaster::tensor::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#443-457' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Get memory for reading and writing on the specified <code>device</code>.
-Can fail if memory allocation fails, or if tensor wasn&#39;t initialized yet.</p>
+Can fail if memory allocation fails, or if tensor wasn't initialized yet.</p>
 </div><h4 id='method.write_only' class="method"><span id='write_only.v' class='invisible'><code>pub fn <a href='#method.write_only' class='fnname'>write_only</a>&lt;'a, D:&nbsp;<a class="trait" href="../../coaster/device/trait.IDevice.html" title="trait coaster::device::IDevice">IDevice</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;'a mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>D<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;&amp;'a mut D::<a class="type" href="../../coaster/device/trait.IDevice.html#associatedtype.M" title="type coaster::device::IDevice::M">M</a>, <a class="enum" href="../../coaster/tensor/enum.Error.html" title="enum coaster::tensor::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/coaster/tensor.rs.html#466-476' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Get memory for writing only.
 This function skips synchronization and initialization checks, since
@@ -113,20 +122,22 @@ no memory has been allocated on this device.</p>
                 <h2>Keyboard Shortcuts</h2>
 
                 <dl>
-                    <dt>?</dt>
+                    <dt><kbd>?</kbd></dt>
                     <dd>Show this help dialog</dd>
-                    <dt>S</dt>
+                    <dt><kbd>S</kbd></dt>
                     <dd>Focus the search field</dd>
-                    <dt>↑</dt>
+                    <dt><kbd>↑</kbd></dt>
                     <dd>Move up in search results</dd>
-                    <dt>↓</dt>
+                    <dt><kbd>↓</kbd></dt>
                     <dd>Move down in search results</dd>
-                    <dt>↹</dt>
+                    <dt><kbd>↹</kbd></dt>
                     <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
+                    <dt><kbd>&#9166;</kbd></dt>
                     <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
                 </dl>
             </div>
 

@@ -10,8 +10,11 @@
     <title>coaster::operation - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
     
 
     
@@ -33,6 +36,13 @@
         <p class='location'>Module operation</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../index.html'>coaster</a></p><script>window.sidebarCurrent = {name: 'operation', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
     </nav>
 
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
@@ -51,17 +61,14 @@
                    </a>
                </span><a class='srclink' href='../../src/coaster/operation.rs.html#1-24' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p>Provides the generic functionality for backend-agnostic operations.</p>
-
 <p>An Operation describes the execution of a <a href="../library/index.html">library</a> provided functionality for a
 specific <a href="../frameworks/index.html">framework</a>. An Operation can easily be executed in parallel on multi-core
 devices. An Operation is a very similar to a usual function and defines usually one or many
 arguments over which the operation then will happen.</p>
-
 <p>You are usually not interacting with an operation directly. To execute an operation you would
 use the <a href="../backend/index.html">backend</a>. Also you will rarely initialize your operations directly,
 as this happens automatically at the initialization of a <a href="../binary/index.html">binary</a>.</p>
-
-<h2 id='development' class='section-header'><a href='#development'>Development</a></h2>
+<h2 id="development" class="section-header"><a href="#development">Development</a></h2>
 <p>The functionality provided by this module is used to construct the basic operations that come
 shipped with Coaster, but should also allow you to define and run your own backend-agnostic
 operations as well.</p>
@@ -72,6 +79,7 @@ operations as well.</p>
                                   title='trait coaster::operation::IOperation'>IOperation</a></td>
                            <td class='docblock-short'>
                                 <p>Defines the functionality of an operation.</p>
+
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>
@@ -86,20 +94,22 @@ operations as well.</p>
                 <h2>Keyboard Shortcuts</h2>
 
                 <dl>
-                    <dt>?</dt>
+                    <dt><kbd>?</kbd></dt>
                     <dd>Show this help dialog</dd>
-                    <dt>S</dt>
+                    <dt><kbd>S</kbd></dt>
                     <dd>Focus the search field</dd>
-                    <dt>↑</dt>
+                    <dt><kbd>↑</kbd></dt>
                     <dd>Move up in search results</dd>
-                    <dt>↓</dt>
+                    <dt><kbd>↓</kbd></dt>
                     <dd>Move down in search results</dd>
-                    <dt>↹</dt>
+                    <dt><kbd>↹</kbd></dt>
                     <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
+                    <dt><kbd>&#9166;</kbd></dt>
                     <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
                 </dl>
             </div>
 

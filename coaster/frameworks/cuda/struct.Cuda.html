@@ -10,8 +10,11 @@
     <title>coaster::frameworks::cuda::Cuda - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css" id="themeStyle">
+    <script src="../../../storage.js"></script>
     
 
     
@@ -33,6 +36,13 @@
         <p class='location'>Struct Cuda</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Debug">Debug</a><a href="#impl-Clone">Clone</a><a href="#impl-IFramework">IFramework</a></div></div><p class='location'><a href='../../index.html'>coaster</a>::<wbr><a href='../index.html'>frameworks</a>::<wbr><a href='index.html'>cuda</a></p><script>window.sidebarCurrent = {name: 'Cuda', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../../theme.js"></script>
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
@@ -76,14 +86,13 @@
 <div class='docblock'><p>Initializes a new Framework. <a href="../../../coaster/framework/trait.IFramework.html#tymethod.new">Read more</a></p>
 </div><h4 id='method.load_hardwares' class="method"><span id='load_hardwares.v' class='invisible'><code>fn <a href='../../../coaster/framework/trait.IFramework.html#tymethod.load_hardwares' class='fnname'>load_hardwares</a>() -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../../../coaster/frameworks/cuda/device/struct.Device.html" title="struct coaster::frameworks::cuda::device::Device">Device</a>&gt;, <a class="enum" href="../../../coaster/framework/enum.Error.html" title="enum coaster::framework::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/mod.rs.html#59-61' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Initializes all the available hardwares.</p>
-</div><h4 id='method.hardwares' class="method"><span id='hardwares.v' class='invisible'><code>fn <a href='../../../coaster/framework/trait.IFramework.html#tymethod.hardwares' class='fnname'>hardwares</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../../coaster/frameworks/cuda/device/struct.Device.html" title="struct coaster::frameworks::cuda::device::Device">Device</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/mod.rs.html#63-65' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.hardwares' class="method"><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></span></div><div class="content hidden"><h3 class="important">Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></h3><code class="content"><span class="where fmt-newline">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Read.html" title="trait std::io::Read">Read</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></span><span class="where fmt-newline">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a mut [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></span></code></div></div><span id='hardwares.v' class='invisible'><code>fn <a href='../../../coaster/framework/trait.IFramework.html#tymethod.hardwares' class='fnname'>hardwares</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../../coaster/frameworks/cuda/device/struct.Device.html" title="struct coaster::frameworks::cuda::device::Device">Device</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/mod.rs.html#63-65' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns the cached and available hardwares.</p>
 </div><h4 id='method.binary' class="method"><span id='binary.v' class='invisible'><code>fn <a href='../../../coaster/framework/trait.IFramework.html#tymethod.binary' class='fnname'>binary</a>(&amp;self) -&gt; &amp;Self::<a class="type" href="../../../coaster/framework/trait.IFramework.html#associatedtype.B" title="type coaster::framework::IFramework::B">B</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/mod.rs.html#67-69' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Returns the initialized binary.</p>
 </div><h4 id='method.new_device' class="method"><span id='new_device.v' class='invisible'><code>fn <a href='../../../coaster/framework/trait.IFramework.html#tymethod.new_device' class='fnname'>new_device</a>(&amp;self, hardwares: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../../coaster/frameworks/cuda/device/struct.Device.html" title="struct coaster::frameworks::cuda::device::Device">Device</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self::<a class="type" href="../../../coaster/framework/trait.IFramework.html#associatedtype.D" title="type coaster::framework::IFramework::D">D</a>, <a class="enum" href="../../../coaster/framework/enum.Error.html" title="enum coaster::framework::Error">Error</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/coaster/frameworks/cuda/mod.rs.html#75-82' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>Creates a new Cuda context for computation.</p>
-
-<p>Cuda&#39;s context differs from OpenCL&#39;s context. Multi device support works different in Cuda.
+<p>Cuda's context differs from OpenCL's context. Multi device support works different in Cuda.
 This function currently suppports only one device, but should be a wrapper for multi device support.</p>
 </div></div></section>
     <section id='search' class="content hidden"></section>
@@ -98,20 +107,22 @@ This function currently suppports only one device, but should be a wrapper for m
                 <h2>Keyboard Shortcuts</h2>
 
                 <dl>
-                    <dt>?</dt>
+                    <dt><kbd>?</kbd></dt>
                     <dd>Show this help dialog</dd>
-                    <dt>S</dt>
+                    <dt><kbd>S</kbd></dt>
                     <dd>Focus the search field</dd>
-                    <dt>↑</dt>
+                    <dt><kbd>↑</kbd></dt>
                     <dd>Move up in search results</dd>
-                    <dt>↓</dt>
+                    <dt><kbd>↓</kbd></dt>
                     <dd>Move down in search results</dd>
-                    <dt>↹</dt>
+                    <dt><kbd>↹</kbd></dt>
                     <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
+                    <dt><kbd>&#9166;</kbd></dt>
                     <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
                 </dl>
             </div>
 

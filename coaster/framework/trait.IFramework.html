@@ -10,8 +10,11 @@
     <title>coaster::framework::IFramework - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
     
 
     
@@ -33,6 +36,13 @@
         <p class='location'>Trait IFramework</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#associated-types">Associated Types</a><div class="sidebar-links"><a href="#associatedtype.H">H</a><a href="#associatedtype.D">D</a><a href="#associatedtype.B">B</a></div><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.ID">ID</a><a href="#tymethod.new">new</a><a href="#tymethod.load_hardwares">load_hardwares</a><a href="#tymethod.hardwares">hardwares</a><a href="#tymethod.binary">binary</a><a href="#tymethod.new_device">new_device</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>coaster</a>::<wbr><a href='index.html'>framework</a></p><script>window.sidebarCurrent = {name: 'IFramework', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
@@ -75,14 +85,12 @@
             </h2>
             <div class='methods'>
         <h3 id='tymethod.ID' class='method'><span id='ID.v' class='invisible'><code>fn <a href='#tymethod.ID' class='fnname'>ID</a>() -&gt; &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a></code></span></h3><div class='docblock'><p>Defines the Framework by a Name.</p>
-
 <p>For convention, let the ID be uppercase.<br/>
 EXAMPLE: OPENCL</p>
 </div><h3 id='tymethod.new' class='method'><span id='new.v' class='invisible'><code>fn <a href='#tymethod.new' class='fnname'>new</a>() -&gt; Self <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code></span></h3><div class='docblock'><p>Initializes a new Framework.</p>
-
 <p>Loads all the available hardwares</p>
 </div><h3 id='tymethod.load_hardwares' class='method'><span id='load_hardwares.v' class='invisible'><code>fn <a href='#tymethod.load_hardwares' class='fnname'>load_hardwares</a>() -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;Self::<a class="type" href="../../coaster/framework/trait.IFramework.html#associatedtype.H" title="type coaster::framework::IFramework::H">H</a>&gt;, <a class="enum" href="../../coaster/framework/enum.Error.html" title="enum coaster::framework::Error">Error</a>&gt;</code></span></h3><div class='docblock'><p>Initializes all the available hardwares.</p>
-</div><h3 id='tymethod.hardwares' class='method'><span id='hardwares.v' class='invisible'><code>fn <a href='#tymethod.hardwares' class='fnname'>hardwares</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>Self::<a class="type" href="../../coaster/framework/trait.IFramework.html#associatedtype.H" title="type coaster::framework::IFramework::H">H</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span></h3><div class='docblock'><p>Returns the cached and available hardwares.</p>
+</div><div class="important-traits"><div class='tooltip'>ⓘ<span class='tooltiptext'>Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></span></div><div class="content hidden"><h3 class="important">Important traits for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></h3><code class="content"><span class="where fmt-newline">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Read.html" title="trait std::io::Read">Read</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></span><span class="where fmt-newline">impl&lt;'a&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a> for <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;'a mut [</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></span></code></div></div><h3 id='tymethod.hardwares' class='method'><span id='hardwares.v' class='invisible'><code>fn <a href='#tymethod.hardwares' class='fnname'>hardwares</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>Self::<a class="type" href="../../coaster/framework/trait.IFramework.html#associatedtype.H" title="type coaster::framework::IFramework::H">H</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span></h3><div class='docblock'><p>Returns the cached and available hardwares.</p>
 </div><h3 id='tymethod.binary' class='method'><span id='binary.v' class='invisible'><code>fn <a href='#tymethod.binary' class='fnname'>binary</a>(&amp;self) -&gt; &amp;Self::<a class="type" href="../../coaster/framework/trait.IFramework.html#associatedtype.B" title="type coaster::framework::IFramework::B">B</a></code></span></h3><div class='docblock'><p>Returns the initialized binary.</p>
 </div><h3 id='tymethod.new_device' class='method'><span id='new_device.v' class='invisible'><code>fn <a href='#tymethod.new_device' class='fnname'>new_device</a>(&amp;self, _: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a>Self::<a class="type" href="../../coaster/framework/trait.IFramework.html#associatedtype.H" title="type coaster::framework::IFramework::H">H</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self::<a class="type" href="../../coaster/framework/trait.IFramework.html#associatedtype.D" title="type coaster::framework::IFramework::D">D</a>, <a class="enum" href="../../coaster/framework/enum.Error.html" title="enum coaster::framework::Error">Error</a>&gt;</code></span></h3><div class='docblock'><p>Initializes a new Device from the provided hardwares.</p>
 </div></div>
@@ -108,20 +116,22 @@ EXAMPLE: OPENCL</p>
                 <h2>Keyboard Shortcuts</h2>
 
                 <dl>
-                    <dt>?</dt>
+                    <dt><kbd>?</kbd></dt>
                     <dd>Show this help dialog</dd>
-                    <dt>S</dt>
+                    <dt><kbd>S</kbd></dt>
                     <dd>Focus the search field</dd>
-                    <dt>↑</dt>
+                    <dt><kbd>↑</kbd></dt>
                     <dd>Move up in search results</dd>
-                    <dt>↓</dt>
+                    <dt><kbd>↓</kbd></dt>
                     <dd>Move down in search results</dd>
-                    <dt>↹</dt>
+                    <dt><kbd>↹</kbd></dt>
                     <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
+                    <dt><kbd>&#9166;</kbd></dt>
                     <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
                 </dl>
             </div>
 

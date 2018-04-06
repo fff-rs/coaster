@@ -10,8 +10,11 @@
     <title>coaster::frameworks::opencl::context::ContextInfo - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css" id="themeStyle">
+    <script src="../../../../storage.js"></script>
     
 
     
@@ -33,6 +36,13 @@
         <p class='location'>Enum ContextInfo</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.ReferenceCount">ReferenceCount</a><a href="#variant.NumDevices">NumDevices</a><a href="#variant.Properties">Properties</a><a href="#variant.Devices">Devices</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a></div></div><p class='location'><a href='../../../index.html'>coaster</a>::<wbr><a href='../../index.html'>frameworks</a>::<wbr><a href='../index.html'>opencl</a>::<wbr><a href='index.html'>context</a></p><script>window.sidebarCurrent = {name: 'ContextInfo', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
     </nav>
 
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../../../theme.js"></script>
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
@@ -62,9 +72,7 @@
 <span id="variant.ReferenceCount" class="variant small-section-header"><a href="#variant.ReferenceCount" class="anchor field"></a><span id='ReferenceCount.v' class='invisible'><code>ReferenceCount(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><div class='docblock'><p>Number of references to the context currently held.</p>
 </div><span id="variant.NumDevices" class="variant small-section-header"><a href="#variant.NumDevices" class="anchor field"></a><span id='NumDevices.v' class='invisible'><code>NumDevices(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><div class='docblock'><p>Number of devices in the context.</p>
 </div><span id="variant.Properties" class="variant small-section-header"><a href="#variant.Properties" class="anchor field"></a><span id='Properties.v' class='invisible'><code>Properties(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="enum" href="../../../../coaster/frameworks/opencl/context/enum.ContextProperties.html" title="enum coaster::frameworks::opencl::context::ContextProperties">ContextProperties</a>&gt;)</code></span></span><div class='docblock'><p>The properties the context was configured with.</p>
-
 <p>These are:</p>
-
 <ul>
 <li>CL_CONTEXT_PLATFORM</li>
 <li>CL_CONTEXT_D3D10_DEVICE_KHR</li>
@@ -74,7 +82,6 @@
 <li>CL_WGL_HDC_KHR (GL context on Windows)</li>
 <li>CL_CGL_SHAREGROUP_KHR (GL context sharegroup on MacOS)</li>
 </ul>
-
 <p>Only the first property is required--the others may not be there
 depending on CL extensions.</p>
 </div><span id="variant.Devices" class="variant small-section-header"><a href="#variant.Devices" class="anchor field"></a><span id='Devices.v' class='invisible'><code>Devices(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec">Vec</a>&lt;<a class="struct" href="../../../../coaster/frameworks/opencl/device/struct.Device.html" title="struct coaster::frameworks::opencl::device::Device">Device</a>&gt;)</code></span></span><div class='docblock'><p>The devices (IDs) in the context.</p>
@@ -103,20 +110,22 @@ depending on CL extensions.</p>
                 <h2>Keyboard Shortcuts</h2>
 
                 <dl>
-                    <dt>?</dt>
+                    <dt><kbd>?</kbd></dt>
                     <dd>Show this help dialog</dd>
-                    <dt>S</dt>
+                    <dt><kbd>S</kbd></dt>
                     <dd>Focus the search field</dd>
-                    <dt>↑</dt>
+                    <dt><kbd>↑</kbd></dt>
                     <dd>Move up in search results</dd>
-                    <dt>↓</dt>
+                    <dt><kbd>↓</kbd></dt>
                     <dd>Move down in search results</dd>
-                    <dt>↹</dt>
+                    <dt><kbd>↹</kbd></dt>
                     <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
+                    <dt><kbd>&#9166;</kbd></dt>
                     <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
                 </dl>
             </div>
 

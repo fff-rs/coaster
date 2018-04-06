@@ -10,8 +10,11 @@
     <title>coaster::frameworks::cuda - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
-    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css" id="themeStyle">
+    <script src="../../../storage.js"></script>
     
 
     
@@ -30,9 +33,16 @@
     <nav class="sidebar">
         <div class="sidebar-menu">&#9776;</div>
         
-        <p class='location'>Module cuda</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#reexports">Reexports</a></li><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li></ul></div><p class='location'><a href='../../index.html'>coaster</a>::<wbr><a href='../index.html'>frameworks</a></p><script>window.sidebarCurrent = {name: 'cuda', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
+        <p class='location'>Module cuda</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#reexports">Re-exports</a></li><li><a href="#modules">Modules</a></li><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li></ul></div><p class='location'><a href='../../index.html'>coaster</a>::<wbr><a href='../index.html'>frameworks</a></p><script>window.sidebarCurrent = {name: 'cuda', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
     </nav>
 
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../../theme.js"></script>
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
@@ -51,47 +61,52 @@
                    </a>
                </span><a class='srclink' href='../../../src/coaster/frameworks/cuda/mod.rs.html#1-95' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p>Provides informations about the software system, such as Cuda, CUDA, that contains the set of
-components to support <a href="../hardware/index.html">hardwares</a> with kernel execution.</p>
-
-<h2 id='ontology' class='section-header'><a href='#ontology'>Ontology</a></h2>
+components to support [hardwares][hardware] with kernel execution.
+[hardware]: ../hardware/index.html</p>
+<h2 id="ontology" class="section-header"><a href="#ontology">Ontology</a></h2>
 <p>Cuda device -&gt; Hardware
 Cuda context -&gt; Device</p>
-</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Re-exports</a></h2>
 <table><tr><td><code>pub use self::memory::<a class="struct" href="../../../coaster/frameworks/cuda/memory/struct.Memory.html" title="struct coaster::frameworks::cuda::memory::Memory">Memory</a>;</code></td></tr><tr><td><code>pub use self::context::<a class="struct" href="../../../coaster/frameworks/cuda/context/struct.Context.html" title="struct coaster::frameworks::cuda::context::Context">Context</a>;</code></td></tr><tr><td><code>pub use self::function::<a class="struct" href="../../../coaster/frameworks/cuda/function/struct.Function.html" title="struct coaster::frameworks::cuda::function::Function">Function</a>;</code></td></tr><tr><td><code>pub use self::module::<a class="struct" href="../../../coaster/frameworks/cuda/module/struct.Module.html" title="struct coaster::frameworks::cuda::module::Module">Module</a>;</code></td></tr><tr><td><code>pub use self::device::<a class="struct" href="../../../coaster/frameworks/cuda/device/struct.Device.html" title="struct coaster::frameworks::cuda::device::Device">Device</a>;</code></td></tr><tr><td><code>pub use self::device::<a class="struct" href="../../../coaster/frameworks/cuda/device/struct.DeviceInfo.html" title="struct coaster::frameworks::cuda::device::DeviceInfo">DeviceInfo</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
 <table>
                        <tr class=' module-item'>
                            <td><a class="mod" href="context/index.html"
                                   title='mod coaster::frameworks::cuda::context'>context</a></td>
                            <td class='docblock-short'>
-                                <p>Provides a Rust wrapper around Cuda&#39;s context.</p>
+                                <p>Provides a Rust wrapper around Cuda's context.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class="mod" href="device/index.html"
                                   title='mod coaster::frameworks::cuda::device'>device</a></td>
                            <td class='docblock-short'>
-                                <p>Provides a Rust wrapper around Cuda&#39;s device.</p>
+                                <p>Provides a Rust wrapper around Cuda's device.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class="mod" href="function/index.html"
                                   title='mod coaster::frameworks::cuda::function'>function</a></td>
                            <td class='docblock-short'>
-                                <p>Provides a Rust wrapper around Cuda&#39;s Function.</p>
+                                <p>Provides a Rust wrapper around Cuda's Function.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class="mod" href="memory/index.html"
                                   title='mod coaster::frameworks::cuda::memory'>memory</a></td>
                            <td class='docblock-short'>
-                                <p>Provides a Rust wrapper around Cuda&#39;s memory.</p>
+                                <p>Provides a Rust wrapper around Cuda's memory.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
                            <td><a class="mod" href="module/index.html"
                                   title='mod coaster::frameworks::cuda::module'>module</a></td>
                            <td class='docblock-short'>
-                                <p>Provides a Rust wrapper around Cuda&#39;s Module.</p>
+                                <p>Provides a Rust wrapper around Cuda's Module.</p>
+
                            </td>
                        </tr></table><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
@@ -100,6 +115,7 @@ Cuda context -&gt; Device</p>
                                   title='struct coaster::frameworks::cuda::Cuda'>Cuda</a></td>
                            <td class='docblock-short'>
                                 <p>Provides the Cuda Framework.</p>
+
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -107,6 +123,7 @@ Cuda context -&gt; Device</p>
                                   title='struct coaster::frameworks::cuda::Driver'>Driver</a></td>
                            <td class='docblock-short'>
                                 <p>Defines the Cuda API.</p>
+
                            </td>
                        </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
@@ -115,6 +132,7 @@ Cuda context -&gt; Device</p>
                                   title='enum coaster::frameworks::cuda::DriverError'>DriverError</a></td>
                            <td class='docblock-short'>
                                 <p>Defines OpenCL errors.</p>
+
                            </td>
                        </tr></table></section>
     <section id='search' class="content hidden"></section>
@@ -129,20 +147,22 @@ Cuda context -&gt; Device</p>
                 <h2>Keyboard Shortcuts</h2>
 
                 <dl>
-                    <dt>?</dt>
+                    <dt><kbd>?</kbd></dt>
                     <dd>Show this help dialog</dd>
-                    <dt>S</dt>
+                    <dt><kbd>S</kbd></dt>
                     <dd>Focus the search field</dd>
-                    <dt>↑</dt>
+                    <dt><kbd>↑</kbd></dt>
                     <dd>Move up in search results</dd>
-                    <dt>↓</dt>
+                    <dt><kbd>↓</kbd></dt>
                     <dd>Move down in search results</dd>
-                    <dt>↹</dt>
+                    <dt><kbd>↹</kbd></dt>
                     <dd>Switch tab</dd>
-                    <dt>&#9166;</dt>
+                    <dt><kbd>&#9166;</kbd></dt>
                     <dd>Go to active search result</dd>
-                    <dt style="width:31px;">+ / -</dt>
-                    <dd>Collapse/expand all sections</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
                 </dl>
             </div>
 
