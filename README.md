@@ -1,3 +1,11 @@
+
+# ARCHIVED REPO
+
+**THIS REPOSITORY GOT MERGED INTO JUICE**
+**PLEASE CONTINUE HERE [JUICE](https://github.com/spearow/juice/coaster)**
+
+---
+
 # coaster • [![Join the chat at https://gitter.im/spearow/coaster](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg)](https://gitter.im/spearow/coaster?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://ci.spearow.io/api/v1/teams/spearow/pipelines/juice/jobs/test-coaster/badge)](https://ci.spearow.io/teams/spearow/pipelines/juice) [![Crates.io](https://img.shields.io/crates/v/coaster.svg)](https://crates.io/crates/coaster) [![License](https://img.shields.io/crates/l/coaster.svg)](#license)
 
 coaster is an extensible, pluggable, backend-agnostic framework for parallel,
